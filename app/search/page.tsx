@@ -9,6 +9,9 @@ interface SearchProps {
   };
 }
 
+// below line is for stoping the cache
+export const revalidate = 0;
+
 const Search = async ({ searchParams }: SearchProps) => {
   const songs = await getSongsByTitle(searchParams.title);
 
