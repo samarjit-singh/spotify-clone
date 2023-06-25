@@ -92,7 +92,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 h-full">
+    <div className="grid grid-cols-2 md:grid-cols-3 h-full bg-[#4a044e] rounded-lg">
       <div className="flex w-full justify-start">
         <div className="flex items-center gap-x-4">
           <MediaItem data={song} />
@@ -102,7 +102,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
       <div className="flex md:hidden col-auto w-full justify-end items-center">
         <div
           onClick={handlePlay}
-          className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer"
+          className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer mr-2"
         >
           <Icon size={30} className="text-black" />
         </div>

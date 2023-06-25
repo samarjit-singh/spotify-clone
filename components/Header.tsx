@@ -7,9 +7,9 @@ import { BiSearch } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { toast } from "react-hot-toast";
+import Link from "next/link";
 
 import useAuthModal from "@/hooks/useAuthModal";
-
 
 import Button from "./Button";
 import { useUser } from "@/hooks/useUser";
@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   return (
     <div
       className={twMerge(
-        `h-fit bg-gradient-to-b from-emerald-800 p-6`,
+        `h-fit bg-gradient-to-b from-[#4a044e] p-6`,
         className
       )}
     >
@@ -63,12 +63,16 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
         </div>
         <div className="flex md:hidden gap-x-2 items-center">
-          <button className="rounded-full p-2 bg-white items-center justify-center hover:opacity-75 transition">
-            <HiHome className="text-black" size={20} />
-          </button>
-          <button className="rounded-full p-2 bg-white items-center justify-center hover:opacity-75 transition">
-            <BiSearch className="text-black" size={20} />
-          </button>
+          <Link href={"/"}>
+            <button className="rounded-full p-2 bg-white items-center justify-center hover:opacity-75 transition">
+              <HiHome className="text-black" size={20} />
+            </button>
+          </Link>
+          <Link href={"/search"}>
+            <button className="rounded-full p-2 bg-white items-center justify-center hover:opacity-75 transition">
+              <BiSearch className="text-black" size={20} />
+            </button>
+          </Link>
         </div>
         <div
           className="
